@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/questionaire.css">
-    <title>Mon Empreinte</title>
+    <title>Mon Taux</title>
 </head>
 <body>
     <section class="title">
-        <h1>Mon Empreinte</h1>
-        <p>Calculer votre empreinte écologique</p>
+        <h1>Mon Taux</h1>
+        <p>Calculer vos frais lier à la polution de votre voiture</p>
         <img src="img/fleche-bas.svg" alt="fleche pointant vers le bas de page" />
     </section>
 
@@ -165,7 +165,7 @@
                 <div class="answer">
                     <input type="radio" name="q4" id="q4_7" value="7">
                     <label for="q4_7">
-                        <b>Après q42010</b>
+                        <b>Après 2010</b>
                         <p>Note : 7/10</p>
                     </label>
                 </div>
@@ -208,7 +208,11 @@
             <button id="nextBtn" type="button">Suivant</button>
             <button id="submitBtn" type="button">Envoyer</button>
         </form>
-        
+        <div id="text_result" class="result none">
+            <h2>Resultat</h2>
+            <div id="result"></div>
+            <button id="restartBtn">Recommencer le questionnaire</button>
+        </div>
     </main>
     <script src="js/questionnaire.js"></script>
     
