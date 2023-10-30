@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/questionaire.css">
+    <title>Mon Empreinte</title>
+</head>
+<body>
+    <section class="title">
+        <h1>Mon Empreinte</h1>
+        <p>Calculer votre empreinte écologique</p>
+        <img src="img/fleche-bas.svg" alt="fleche pointant vers le bas de page" />
+    </section>
+
+    <main>
+        <button id="startButton">Commencer</button>
+        <form id="quizForm" action="traitement.php" method="post" style="display: none;">
+            <div class="question">
+                <h2>Type de vehicule</h2>
+                <div class="answer">
+                    <input type="radio" name="q1" id="q1_8" value="8">
+                    <label for="q1_8">
+                        <b>Citadine</b>
+                        <p>Poids : 800kg - 1300kg</p>
+                        <p>Note : 8/10</p>
+                    </label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="q1" id="q1_6" value="6">
+                    <label for="q1_6">
+                        <b>Cabriolet</b> 
+                        <p>Poids : 1300kg - 2000kg</p>
+                        <p>Note : 6/10</p>
+                    </label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="q1" id="q1_6.5" value="6.5">
+                    <label for="q1_6.5">
+                        <b>Berline</b> 
+                        <p>Poids : 1300kg - 1800kg </p>
+                        <p>Note : 6.5/10</p>
+                    </label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="q1" id="q1_4" value="4">
+                    <label for="q1_4">
+                        <b>SUV / 4x4</b> 
+                        <p>Poids : 1500kg - 2500kg</p>
+                        <p>Note : 4/10</p>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="question">
+                <h2>Energie</h2>
+                <div class="answer">
+                    <input type="radio" name="q2" id="q2_5" value="5">
+                    <label for="q2_5">
+                        <b>Essence</b>
+                        <p>Note : 5/10</p>
+                    </label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="q2" id="q2_9" value="9">
+                    <label for="q2_9">
+                        <b>Electrique</b>
+                        <p>Note : 9/10</p>
+                    </label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="q2" id="q2_6" value="6">
+                    <label for="q2_6">
+                        <b>Gaz</b>
+                        <p>Note : 6/10</p>
+                    </label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="q2" id="q2_4" value="4">
+                    <label for="q2_4">
+                        <b>Diesel</b>
+                        <p>Note : 4/10</p>
+                    </label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="q2" id="q2_7" value="7">
+                    <label for="q2_7">
+                        <b>Hybride</b>
+                        <p>Note : 7/10</p>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="question">
+                <h2>Kilométrage par an</h2>
+                <div class="answer">
+                    <input type="radio" name="q3" id="q3_9" value="9">
+                    <label for="q3_9">
+                        <b>5-10k/km</b>
+                        <p>Note : 9/10</p>
+                    </label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="q3" id="q3_7" value="7">
+                    <label for="q3_7">
+                        <b>10-15k/km</b>
+                        <p>Note : 7/10</p>
+                    </label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="q3" id="q3_5" value="5">
+                    <label for="q3_5">
+                        <b>15-20k/km</b>
+                        <p>Note : 5/10</p>
+                    </label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="q3" id="q3_3" value="3">
+                    <label for="q3_3">
+                        <b>20-25k/km</b>
+                        <p>Note : 3/10</p>
+                    </label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="q3" id="q3_1" value="1">
+                    <label for="q3_1">
+                        <b>25-30k/km</b>
+                        <p>Note : 1/10</p>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="question">
+                <h2>Année</h2>
+                <div class="answer">
+                    <input type="radio" name="q4" id="q4_1" value="1">
+                    <label for="q4_1">
+                        <b>1960-1970</b>
+                        <p>Note : 1/10</p>
+                    </label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="q4" id="q4_2" value="2">
+                    <label for="q4_2">
+                        <b>1970-1980</b>
+                        <p>Note : 2/10</p>
+                    </label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="q4" id="q4_4" value="4">
+                    <label for="q4_4">
+                        <b>1990-2000</b>
+                        <p>Note : 4/10</p>
+                    </label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="q4" id="q4_5" value="5">
+                    <label for="q4_5">
+                        <b>2000-2010</b>
+                        <p>Note : 5/10</p>
+                    </label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="q4" id="q4_7" value="7">
+                    <label for="q4_7">
+                        <b>Après q42010</b>
+                        <p>Note : 7/10</p>
+                    </label>
+                </div>
+            </div>
+            <div class="question">
+                <h2>Nombre de passagers</h2>
+                <div class="answer">
+                    <input type="radio" name="q5" id="q5_1" value="0.11">
+                    <label for="q5_1">
+                        <b>1 passagers</b>
+                        <p>Note : + 0.11%</p>
+                    </label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="q5" id="q5_2" value="-0.17">
+                    <label for="q5_2">
+                        <b>2 passagers</b>
+                        <p>Note : - 0.17%</p>
+                    </label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="q5" id="q5_3" value="-0.29">
+                    <label for="q5_3">
+                        <b>3 passagers</b>
+                        <p>Note : - 0.29%</p>
+                    </label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="q5" id="q5_4" value="-0.53">
+                    <label for="q5_4">
+                        <b>4 passagers</b>
+                        <p>Note : - 0.53%</p>
+                    </label>
+                </div>
+            </div>
+            
+            <div id="alerte"></div>
+            
+            <button id="prevBtn" type="button">Retour</button>
+            <button id="nextBtn" type="button">Suivant</button>
+            <button id="submitBtn" type="button">Envoyer</button>
+        </form>
+        
+    </main>
+    <script src="js/questionnaire.js"></script>
+    
+</body>
+
+</html>

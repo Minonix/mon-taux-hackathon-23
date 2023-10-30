@@ -1,0 +1,82 @@
+//! questionaire
+
+
+.question {
+    display: none;
+}
+.question.active {
+    display: block;
+}
+
+#startButton {
+    background-color: rgb(0, 153, 255);
+    color: white;
+    border: none;
+    border-radius: 50%; /* Pour rendre le bouton rond */
+    width: 150px; /* Ajustez la taille en conséquence */
+    height: 150px; /* Ajustez la taille en conséquence */
+    font-size: 24px; /* Taille du texte */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(73, 73, 73, 0.733) 5px 5px 10px;
+}
+
+#startButton:hover {
+    background-color: rgba(11, 157, 255, 0.658);
+    box-shadow: rgba(27, 27, 27, 0.767) 10px 10px 10px;
+}
+
+
+#quizForm{
+    // width: 50%; /* Ajustez la largeur du formulaire si nécessaire */
+    text-align: center; /* Centre le contenu du formulaire */
+    @media screen and (max-width: 720px) {
+        width: 100%;
+    }
+}
+
+.question input[type="radio"] {
+    display: none; /* Masque les boutons radio par défaut */
+}
+
+.question label {
+    display: block;
+    padding: 10px;
+    border: 1px solid #ccc;/*couleurdelabordure*/
+    background-color: #24e4e4;/*couleurdufont*/
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.question label:hover {
+    // background-color: #2ceefcda; /* Couleur de survol */
+    box-shadow: rgb(41, 41, 41) 10px 10px 10px;
+}
+
+.question input[type="radio"]:checked + label {
+    background-color: #4CAF50; /* Couleur verte pour la réponse sélectionnée */
+    color: #fff; /* Texte blanc pour la réponse sélectionnée */
+}
+
+
+button {
+    padding: 10px 20px; /* Ajustez les valeurs pour changer la taille des boutons */
+}
+
+#prevBtn, #nextBtn {
+    display: inline-block;
+    margin: 20px;
+}
+
+#submitBtn {
+    background-color:  #4CAF50;
+    display: block;
+    width: 150px;
+    margin-left: calc(50% - (150px / 2));
+}
+
+
+//! gere le résulta des réponse :
+
