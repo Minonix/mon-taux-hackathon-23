@@ -2,30 +2,30 @@ const quizForm = document.getElementById("quizForm");
 const textResult = document.getElementById("text_result");
 const startButton = document.getElementById("startButton");
 
-// Écoutez l'événement de clic sur le bouton "Commencer"
+// Gestionnaire d'événement pour le bouton "Commencer"
 startButton.addEventListener("click", () => {
-    // Masquez le bouton "Commencer"
+    // Masquer le bouton "Commencer"
     startButton.style.display = "none";
-    // Affichez le formulaire
+    // Afficher le formulaire
     quizForm.style.display = "block";
 });
 
-// Sélectionne toutes les questions du formulaire
+// Sélectionner toutes les questions du formulaire
 const questions = document.querySelectorAll(".question");
 
-// Initialise la question actuelle à 0 (la première question)
+// Initialiser la question actuelle à 0 (la première question)
 let currentQuestion = 0;
 
-// Sélectionne les boutons de navigation
+// Sélectionner les boutons de navigation
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 const submitBtn = document.getElementById("submitBtn");
 
 // Fonction pour afficher une question spécifique
 function showQuestion(questionNumber) {
-    // Masque toutes les questions
+    // Masquer toutes les questions
     questions.forEach((question) => question.classList.remove("active"));
-    // Affiche la question spécifique
+    // Afficher la question spécifique
     questions[questionNumber].classList.add("active");
 }
 
@@ -42,9 +42,6 @@ function updateButtons() {
     } else {
         nextBtn.classList.remove("none");
     }
-    
-
-
 
     // Le bouton "Envoyer" est désactivé si nous ne sommes pas sur la dernière question
     submitBtn.disabled = currentQuestion !== questions.length - 1;
@@ -59,14 +56,15 @@ function canProceed() {
     );
     return answered;
 }
+
 // Gestionnaire d'événement pour le bouton "Précédent"
 prevBtn.addEventListener("click", () => {
     if (currentQuestion > 0) {
-        // Décrémente le numéro de la question actuelle
+        // Décrémenter le numéro de la question actuelle
         currentQuestion--;
-        // Affiche la question précédente
+        // Afficher la question précédente
         showQuestion(currentQuestion);
-        // Met à jour l'état des boutons de navigation
+        // Mettre à jour l'état des boutons de navigation
         updateButtons();
     }
 });
@@ -74,17 +72,17 @@ prevBtn.addEventListener("click", () => {
 // Gestionnaire d'événement pour le bouton "Suivant"
 nextBtn.addEventListener("click", () => {
     if (currentQuestion < questions.length - 1) {
-        // Incrémente le numéro de la question actuelle
+        // Incrémenter le numéro de la question actuelle
         currentQuestion++;
-        // Affiche la question suivante
+        // Afficher la question suivante
         showQuestion(currentQuestion);
-        // Met à jour l'état des boutons de navigation
+        // Mettre à jour l'état des boutons de navigation
         updateButtons();
     }
 });
 
-
 const textAlerte = document.getElementById("alerte");
+
 // Gestionnaire d'événement pour le bouton "Envoyer"
 submitBtn.addEventListener("click", () => {
     // Validation du formulaire
@@ -97,51 +95,55 @@ submitBtn.addEventListener("click", () => {
     });
 
     if (answers.length === questions.length) {
-        textAlerte.innerHTML = ""
+        textAlerte.innerHTML = "";
 
         var lastAnswer = answers.pop();
-        
+
         // Utilisation de la méthode 'reduce' pour calculer la somme
         const total = answers.reduce((accumulator, currentValue) => {
-            // Convertir les valeurs actuelles en nombres (parseInt)
-            const currentNumber = parseFloat(currentValue, 10);
+            // Convertir les valeurs actuelles en nombres (parseFloat)
+            const currentNumber = parseFloat(currentValue);
             // Ajouter la valeur convertie à l'accumulateur
             return accumulator + currentNumber;
         }, 0);
 
         if (total <= 10) {
             var taux = 3;
-        }else if (total <= 15) {
+        } else if (total <= 15) {
             var taux = 2.74;
-        }else if (total <= 25) {
+        } else if (total <= 25) {
             var taux = 2.52;
-        }else if (total <= 33) {
+        } else if (total <= 33) {
             var taux = 2.10;
-        }else {
+        } else {
             var taux = 1.85;
         }
-        var lastAnswer = parseFloat(lastAnswer, 10);
-        const result = taux + lastAnswer;
 
-        quizForm.classList.add('none')
-        textResult.classList.remove('none')
+        var lastAnswerFloat = parseFloat(lastAnswer);
+        const result = taux + lastAnswerFloat;
+
+        quizForm.classList.add('none');
+        textResult.classList.remove('none');
         const divResult = document.getElementById("result");
-        divResult.innerHTML = "<h1>Vos frais s'élève à : " + result + "%</h1> <p>vous avez atteint le score de : <b>" + total + "/40</b> soit <b>" + total/2 +"/20</b>"
+
+        // retour avec toute les information
+        divResult.innerHTML = "<h1>Vos frais s'élèvent à : " + result + "%</h1> <p>Vous avez atteint le score de : <b>" + total + "/40</b> soit <b>" + total/2 + "/20</b>";
     } else {
-        textAlerte.innerHTML = "il vous manque des réponse à cochet"
+        textAlerte.innerHTML = "Il vous manque des réponses à cocher";
     }
 });
 
 const restartBtn = document.getElementById("restartBtn");
 
+// Gestionnaire d'événement pour le bouton "Recommencer"
 restartBtn.addEventListener("click", () => {
-    // Masquez le résultat
+    // Masquer le résultat
     textResult.classList.add("none");
-    
-    // Réinitialisez la question actuelle à 0
+
+    // Réinitialiser la question actuelle à 0
     currentQuestion = 0;
 
-    // Décochez toutes les réponses
+    // Décocher toutes les réponses
     questions.forEach((question) => {
         const inputs = question.querySelectorAll('input[type="radio"]');
         inputs.forEach((input) => {
@@ -149,17 +151,15 @@ restartBtn.addEventListener("click", () => {
         });
     });
 
-    quizForm.classList.remove('none')
-    
-    // Affichez la première question
+    quizForm.classList.remove('none');
+
+    // Afficher la première question
     showQuestion(currentQuestion);
 
-    // Mettez à jour les boutons de navigation
+    // Mettre à jour les boutons de navigation
     updateButtons();
 });
 
-
-
-// Affiche la première question et met à jour les boutons de navigation
+// Afficher la première question et mettre à jour les boutons de navigation
 showQuestion(currentQuestion);
 updateButtons();

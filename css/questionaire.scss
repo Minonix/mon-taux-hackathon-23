@@ -1,13 +1,15 @@
-//! questionaire
+//! Questionnaire
 
-
+/* Styles pour les questions */
 .question {
     display: none;
 }
+
 .question.active {
     display: block;
 }
 
+/* Styles pour le bouton "Commencer" */
 #startButton {
     background-color: rgb(0, 153, 255);
     color: white;
@@ -28,8 +30,8 @@
     box-shadow: rgba(27, 27, 27, 0.767) 10px 10px 10px;
 }
 
-
-#quizForm{
+/* Styles pour le formulaire */
+#quizForm {
     // width: 50%; /* Ajustez la largeur du formulaire si nécessaire */
     text-align: center; /* Centre le contenu du formulaire */
     @media screen and (max-width: 720px) {
@@ -37,6 +39,7 @@
     }
 }
 
+/* Styles pour les questions et les réponses */
 .question input[type="radio"] {
     display: none; /* Masque les boutons radio par défaut */
 }
@@ -44,8 +47,8 @@
 .question label {
     display: block;
     padding: 10px;
-    border: 1px solid #ccc;/*couleurdelabordure*/
-    background-color: #24e4e4;/*couleurdufont*/
+    border: 1px solid #ccc; /* Couleur de la bordure */
+    background-color: #24e4e4; /* Couleur de fond */
     cursor: pointer;
     margin-bottom: 20px;
 }
@@ -60,7 +63,7 @@
     color: #fff; /* Texte blanc pour la réponse sélectionnée */
 }
 
-
+/* Styles pour les boutons */
 button {
     padding: 10px 20px; /* Ajustez les valeurs pour changer la taille des boutons */
 }
@@ -77,6 +80,4 @@ button {
     margin-left: calc(50% - (150px / 2));
 }
 
-
-//! gere le résulta des réponse :
-
+//! Gère le résultat des réponses
