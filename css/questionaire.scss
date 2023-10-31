@@ -49,6 +49,7 @@
     padding: 10px;
     border: 1px solid #ccc; /* Couleur de la bordure */
     background-color: #24e4e4; /* Couleur de fond */
+    box-shadow: rgb(41, 41, 41) 5px 5px 5px;
     cursor: pointer;
     margin-bottom: 20px;
 }
@@ -66,6 +67,7 @@
 /* Styles pour les boutons */
 button {
     padding: 10px 20px; /* Ajustez les valeurs pour changer la taille des boutons */
+    box-shadow: rgb(41, 41, 41) 5px 5px 5px;
 }
 
 #prevBtn, #nextBtn {
@@ -78,6 +80,14 @@ button {
     display: block;
     width: 150px;
     margin-left: calc(50% - (150px / 2));
+    margin-bottom: 20px;
 }
 
 //! Gère le résultat des réponses
+
+#restartBtn{
+    margin-top: 100px;
+    margin-left: 50%;
+
+    transform: translateX(-50%);
+}
